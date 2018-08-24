@@ -29,9 +29,6 @@ def main():
     # create Subject Sets
     project.createSubjectSet(mode=cfg_model['subject_mode'])
 
-    # save all subjects / images on disk that are not already there
-    project.saveSubjectSetOnDisk(overwrite=False)
-
     ########################
     # Define Experiment
     ########################

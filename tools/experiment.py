@@ -1,15 +1,14 @@
-from tools.subjects import SubjectSet
-from sklearn.model_selection import train_test_split
 import os
 import shutil
-from tools.project import Project
-from tools.model import Model
-from tools.helpers import createSplitIDs
-from config.config import cfg_path, cfg_model, config
-from learning.model_components import create_class_mappings
-from config.config import logging
 import random
 from collections import OrderedDict
+import traceback
+
+from tools.subjects import SubjectSet
+from sklearn.model_selection import train_test_split
+from tools.helpers import createSplitIDs
+from config.config import cfg_path
+from config.config import logging
 
 
 class Experiment(object):
@@ -493,6 +492,7 @@ class Experiment(object):
         except Exception as e:
             # log exception
             logging.exception("model training failed")
+            traceback.print_exc()
             raise Exception
 
     def evaluate(self):
