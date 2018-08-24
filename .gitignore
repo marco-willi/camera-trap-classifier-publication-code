@@ -19,5 +19,17 @@ $RECYCLE.BIN/
 *.lnk
 
 # =========================
-# Operating System Files
+# Misc Files
 # =========================
+
+config/credentials.ini
+.spyproject/*
+*.pyc
+.Rproj.user
+*.Rproj
+*.Rhistory
+*.pdf
+*.html
+*.gz
+*.log
+old/*
