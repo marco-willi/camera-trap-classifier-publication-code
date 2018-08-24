@@ -483,6 +483,7 @@ class Experiment(object):
         except Exception as e:
             # log exception
             logging.exception("model preparation failed")
+            traceback.print_exc()
             raise Exception
 
     def train(self):
