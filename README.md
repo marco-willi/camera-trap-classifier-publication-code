@@ -25,4 +25,7 @@ Different helper functions, e.g. fetching data, classes for projects, experiment
 
 ## Examples
 
-...
+```
+git clone https://github.com/marco-willi/camera-trap-classifier-publication-code.git
+
+```
