@@ -170,7 +170,7 @@ class Experiment(object):
             # abort if one file is missing and raise exception
             if not os.path.isfile(path):
                 raise FileExistsError("File %s does not exist" % path)
-            s.load(path)
+            s.load(path, root_path=cfg_path['images'])
 
     def createExpDataSet(self, link_only=True,
                          splits="new",

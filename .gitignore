@@ -33,3 +33,4 @@ config/credentials.ini
 *.gz
 *.log
 old/*
+clean_data/*

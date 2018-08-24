@@ -300,7 +300,7 @@ class SubjectSet(object):
 
         logging.info("SubjectSet saved to %s" % path)
 
-    def load(self, path):
+    def load(self, path, root_path=''):
         """ re-create subject set from csv / save operation """
         # open file
         file = open(path, 'r')
@@ -313,7 +313,7 @@ class SubjectSet(object):
             imgs = s.getImages()
 
             for img, p in zip(list(imgs.keys()), v['file_paths']):
-                imgs[img].setPath(p)
+                imgs[img].setPath(os.path.join(root_path, p))
 
             self.addSubject(s)
 

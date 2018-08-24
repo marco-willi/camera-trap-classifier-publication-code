@@ -1,7 +1,7 @@
 # _Identifying Animal Species in Camera Trap Images using Deep Learning and Citizen Science_
 
 This repo provides the research code used in this study. We strongly recommend to use the following repo
-https://github.com/marco-willi/camera-trap-classifier to train new models. The only purpose of this repo is to provide reproducability of our results.
+https://github.com/marco-willi/camera-trap-classifier to train new models. The only purpose of this repo is to provide reproducability of our results and to apply the models trained in the study.
 
 # Pre-Requisites
 
