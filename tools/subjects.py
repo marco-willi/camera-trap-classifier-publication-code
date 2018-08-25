@@ -451,7 +451,8 @@ class Image(object):
 
     def createSymLink(self, dest_path):
         """ creates symbolic link on dest_path """
-        os.symlink(self.path + self.filename, dest_path + self.filename)
+        os.symlink(os.path.join(self.path, self.filename),
+                   os.path.join(dest_path, self.filename))
 
     def getFilename(self):
         """ returns file name including image postfix """

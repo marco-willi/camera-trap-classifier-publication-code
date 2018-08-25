@@ -216,8 +216,7 @@ class Experiment(object):
                 # store information of existing files in dictionary
                 existing_dict = dict()
                 for cl in all_classes:
-                    existing_files = os.listdir(root_path + os.path.sep + cl +
-                                                os.path.sep)
+                    existing_files = os.listdir(os.path.join(root_path, cl))
                     for ex in existing_files:
                         existing_id = ex.split('_')[0]
                         if existing_id not in existing_dict:
@@ -242,9 +241,8 @@ class Experiment(object):
                         files_to_remove = existing_dict[r]['files']
                         class_to_be_removed = existing_dict[r]['cl']
                         for fr in files_to_remove:
-                            os.remove(root_path + os.path.sep +
-                                      class_to_be_removed +
-                                      os.path.sep + fr)
+                            os.remove(os.path.join(root_path,
+                                                   class_to_be_removed, fr))
 
                     # only keep subject ids that are not already on disk
                     subject_ids = list(subject_ids_relev)
