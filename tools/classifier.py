@@ -165,7 +165,7 @@ class CamTrapClassifier(object):
                     class_mode='sparse',
                     seed=123,
                     shuffle=False)
-        
+
             # check number of files found
             assert generator.n > 0,\
                 "No images found in sub-directories of %s" % path
@@ -269,8 +269,7 @@ class CamTrapClassifier(object):
             if image_directory == '':
                 image_path = ''
             else:
-                image_path = image_directory + class_dir +\
-                             os.path.sep + fname
+                image_path = os.path.join(image_directory, class_dir, fname)
 
             res[i] = OrderedDict([('file_name', fname),
                                   ('predicted_class', y_pred),

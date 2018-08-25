@@ -73,6 +73,18 @@ python predict.py \
 ```
 Note that 'images_dir' must contain 1 to N sub-directories with images.
 
+The result will be a csv with following entries:
+- file_name: the image name
+- predicted_class: the class with the highest probability
+- predicted_probability: the probability of the predicted class
+- predictions_all: a json with keys of each class and their probabilities
+- image_path: the full path of the image
+
+Example output of the snapshot serengeti species model:
+```
+file_name,predicted_class,predicted_probability,predictions_all,image_path
+ASG0004cla_1.jpeg,elephant,1.0,"{'human': 1.2061459e-10, 'cheetah': 7.6320991e-17, 'secretaryBird': 9.2653534e-19, 'hyenaStriped': 1.2458685e-16, 'eland': 4.5333959e-14, 'hare': 1.2339816e-17, 'dikDik': 8.7492429e-17, 'hartebeest': 2.926076e-14, 'gazelleGrants': 2.1007439e-13, 'leopard': 3.0884748e-16, 'insectSpider': 4.3569909e-17, 'zorilla': 2.033801e-17, 'hippopotamus': 3.4702596e-13, 'hyenaSpotted': 3.2176124e-16, 'buffalo': 1.6195639e-11, 'impala': 3.7534744e-14, 'giraffe': 4.5546412e-13, 'warthog': 4.011828e-13, 'bushbuck': 3.1397468e-15, 'ostrich': 4.3003787e-13, 'batEaredFox': 1.3257945e-17, 'reedbuck': 7.9458289e-15, 'honeyBadger': 2.4897844e-17, 'koriBustard': 5.6870173e-15, 'gazelleThomsons': 2.3575537e-14, 'otherBird': 1.4772053e-15, 'wildcat': 1.1637649e-16, 'aardvark': 1.5080654e-15, 'guineaFowl': 2.7299814e-16, 'waterbuck': 3.4258154e-13, 'vulture': 4.1541407e-17, 'genet': 1.7523444e-16, 'wildebeest': 2.1406713e-12, 'aardwolf': 1.3755561e-17, 'elephant': 1.0, 'duiker': 6.224699e-16, 'zebra': 1.278188e-11, 'reptiles': 7.7722187e-16, 'vervetMonkey': 1.8021384e-15, 'lionFemale': 2.4059594e-15, 'porcupine': 2.438521e-15, 'jackal': 2.5444938e-18, 'baboon': 5.8241938e-14, 'lionMale': 5.7171429e-15, 'rhinoceros': 3.5210663e-12, 'civet': 2.7837817e-17, 'rodents': 1.3789448e-17, 'caracal': 5.1348895e-16, 'mongoose': 3.5725514e-17, 'topi': 4.7060778e-15, 'serval': 1.8760704e-18}",/data/lucifer1.2/users/will5448/data_hdd/ctc/ss/images/elephant/ASG0004cla_1.jpeg
+```
 ## Train a Model
 
 1. Open the config/config.ini file and make the following adjustments:
