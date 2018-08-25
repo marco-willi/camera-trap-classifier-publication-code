@@ -178,10 +178,11 @@ def create_data_generators(cfg, target_shape, data_augmentation="none"):
 
     # raw data generator required for calculating image statistics
     # on 2000 images
-    logging.info("Initializing raw generator")
+    img_path = os.path.join(cfg_path['images'], 'train')
+    logging.info("Initializing raw generator in %s" % img_path)
     datagen_raw = ImageDataGenerator(rescale=1./255)
     raw_generator = datagen_raw.flow_from_directory(
-            cfg_path['images'] + 'train',
+            img_path,
             target_size=target_shape[0:2],
             color_mode=color_mode,
             batch_size=2000,
@@ -225,27 +226,30 @@ def create_data_generators(cfg, target_shape, data_augmentation="none"):
     else:
         batch_size = cfg['batch_size']
 
-    logging.info("Initializing train generator")
+    img_path = os.path.join(cfg_path['images'], 'train')
+    logging.info("Initializing train generator in %s" % img_path)
     train_generator = datagen_train.flow_from_directory(
-            cfg_path['images'] + 'train',
+            img_path,
             target_size=target_shape[0:2],
             color_mode=color_mode,
             batch_size=batch_size,
             class_mode='sparse',
             seed=cfg_model['random_seed'])
 
-    logging.info("Initializing test generator")
+    img_path = os.path.join(cfg_path['images'], 'test')
+    logging.info("Initializing test generator in %s" % img_path)
     test_generator = datagen_test.flow_from_directory(
-            cfg_path['images'] + 'test',
+            img_path,
             target_size=target_shape[0:2],
             color_mode=color_mode,
             batch_size=batch_size,
             class_mode='sparse',
             seed=cfg_model['random_seed'])
 
-    logging.info("Initializing val generator")
+    img_path = os.path.join(cfg_path['images'], 'val')
+    logging.info("Initializing val generator in %s" % img_path)
     val_generator = datagen_test.flow_from_directory(
-            cfg_path['images'] + 'val',
+            img_path,
             target_size=target_shape[0:2],
             color_mode=color_mode,
             batch_size=batch_size,
