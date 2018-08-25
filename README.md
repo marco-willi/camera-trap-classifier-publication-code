@@ -36,6 +36,13 @@ root_directory/
     snapshot_wisconsin
 ```
 
+- images/: This is for storing the images in class-specific directories.
+- db/: This is for storing the dataset meta-data, including for all experiments and model runs.
+- save/: This is for storing final models, files needed for prediction and predictions on test/validation data.
+- models/: This is for storing intermediate models and other files.
+- logs/: This is for storing log files for each model run.
+
+
 # Code Structure
 
 ### config
@@ -51,5 +58,38 @@ Different helper functions, e.g. fetching data, classes for projects, experiment
 
 ```
 git clone https://github.com/marco-willi/camera-trap-classifier-publication-code.git
+```
 
+## Apply a Model
+
+The following code shows an example of how to classify images using the snapshot serengeti species model:
+
+```
+python predict.py \
+-path_to_model /my_data/save/ss/ss_species_51_201708072308.hdf5 \
+-model_cfg_json /my_data/save/ss/ss_species_51_201708072308_cfg.json \
+-export_dir /my_data/save/ss/
+```
+
+## Train a Model
+
+1. Open the config/config.ini file and make the following adjustments:
+- projects: choose for which dataset to train the model
+- paths: define paths
+- experiment id: define the experiment id to run for the chosen project by choosing it in the specific project section. For Example: 'experiment_id: ss_blank_vs_non_blank_small' for the snapshot serengeti project.
+
+2. Create folders for the specific project in each of the paths as defined in the config.ini. For example: create the following directories if training a model for snapshot_wisconsin:
+- ../db/snapshot_wisconsin
+- ../images/snapshot_wisconsin
+- ../save/snapshot_wisconsin
+- ../model/snapshot_wisconsin
+- ../logs/snapshot_wisconsin
+
+3. Make sure the images are in the /images/<project_name>/all/ directory in class specific folders.
+
+4. Make sure the meta-data are in the /db/<project_name>/ directory.
+
+5. Run the code:
+```
+python main.py
 ```
