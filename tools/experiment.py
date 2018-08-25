@@ -261,8 +261,8 @@ class Experiment(object):
                     label = sub.getLabels()
 
                     for img in imgs.values():
-                        img.createSymLink(dest_path=root_path + os.path.sep +
-                                          label + os.path.sep)
+                        if img.checkFileExistence():
+                            img.createSymLink(dest_path=os.path.join(root_path, label))
             else:
                 logging.info("Creating hard copy files")
                 for s_i in subject_ids:

@@ -7,6 +7,13 @@ https://github.com/marco-willi/camera-trap-classifier to train new models. The o
 
 The following pre-requisites are necessary to run the code.
 
+## Python
+
+We have used Python 3.5 to train the models. The necessary modules are defined in the requirements.txt and can be installed using pip:
+```
+pip install -r requirements.txt
+```
+
 ## Directory Structure
 
 Prepare the following directory structure. The example shown is for training a model for the snapshot wisconsin dataset.
