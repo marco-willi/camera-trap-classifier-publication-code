@@ -3,6 +3,10 @@
 
     Parameters
     ------------
+    images_dir:
+        - path to root directory that must contain 1 or more directories with
+          images
+
     path_to_model:
         - path to model file
         - string
@@ -24,6 +28,7 @@
     Usage example:
 
     python predict.py \
+    -images_dir /my_data/new_images/ \
     -path_to_model /my_data/save/ss/ss_species_51_201708072308.hdf5 \
     -model_cfg_json /my_data/save/ss/ss_species_51_201708072308_cfg.json \
     -export_dir /my_data/save/ss/
@@ -38,8 +43,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-images_dir", type=str, required=True,
-        help='top level path (directory) in which to search for images \
-              for classification')
+        help='top level path (directory) that must contain 1 to N directories \
+              in which to search for images to classify.')
     parser.add_argument(
         "-path_to_model", type=str, required=True,
         help='path to the model file (.hdf5)')
