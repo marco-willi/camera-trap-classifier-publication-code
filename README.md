@@ -66,10 +66,12 @@ The following code shows an example of how to classify images using the snapshot
 
 ```
 python predict.py \
+-images_dir /my_data/new_images/ \
 -path_to_model /my_data/save/ss/ss_species_51_201708072308.hdf5 \
 -model_cfg_json /my_data/save/ss/ss_species_51_201708072308_cfg.json \
 -export_dir /my_data/save/ss/
 ```
+Note that 'images_dir' must contain 1 to N sub-directories with images.
 
 ## Train a Model
 
