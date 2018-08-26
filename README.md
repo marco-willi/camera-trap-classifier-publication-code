@@ -82,6 +82,8 @@ ASG0004cla_1.jpeg,elephant,1.0,"{'human': 1.2061459e-10, 'cheetah': 7.6320991e-1
 ```
 # Train a Model
 
+Model training relies on the specifications in the config.ini file and requires a specific folder strucutre.
+
 1. Open the config/config.ini file and make the following adjustments:
 - projects: choose for which dataset to train the model
 - paths: define paths
