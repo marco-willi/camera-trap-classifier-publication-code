@@ -1,7 +1,7 @@
 # _Identifying Animal Species in Camera Trap Images using Deep Learning and Citizen Science_
 
 This repo provides the research code used in _Identifying Animal Species in Camera Trap Images using Deep Learning and Citizen Science_. We strongly recommend to use the following repo
-https://github.com/marco-willi/camera-trap-classifier to train new models. The main purpose of this repo is to provide reproducability of our results and to provide the models trained in the study for application on new data.
+https://github.com/marco-willi/camera-trap-classifier to train new models. The main purpose of this repo is to provide reproducability of our results and to provide the models trained in the study which can be used to classify images.
 
 # Pre-Requisites
 
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ## Directory Structure
 
-To train models a specific directory structure is required. The 'root_directory' is an arbitrary directory which must contain the following directory structure:
+To train models a specific directory structure is required. The 'root_directory' is an arbitrary directory which must contain the following directory structure (shown is an example for snapshot_wisconsin):
 
 ```
 root_directory/
