@@ -306,30 +306,3 @@ class ImageUrlLoader(object):
                                      tm, tm_total))
 
         return summary
-
-
-if __name__ == "__main__":
-    from main import prep_data
-    train_dir, test_dir, val_dir = prep_data()
-
-    # test
-    img_loader = ImageUrlLoader()
-    # get some image urls
-    urls = train_dir.paths[512:630]
-
-    time_start = time.time()
-    imgs = img_loader.getImages(urls)
-    time_end = time.time()
-    print("To Fetch %s images in parallel, it took: %s seconds" %
-          (len(imgs), time_end - time_start))
-
-    # get some image urls
-    time_start = time.time()
-    img_loader2 = ImageUrlLoader(parallel=False)
-
-    imgs2 = img_loader2.getImages(urls)
-    time_end = time.time()
-    print("To Fetch %s images in seq., it took: %s seconds" %
-          (len(imgs), time_end - time_start))
-
-    assert(imgs == imgs2)

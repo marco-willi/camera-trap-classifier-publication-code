@@ -82,7 +82,7 @@ ASG0004cla_1.jpeg,elephant,1.0,"{'human': 1.2061459e-10, 'cheetah': 7.6320991e-1
 ```
 # Train a Model
 
-Model training relies on the specifications in the config.ini file and requires a specific folder strucutre.
+Model training relies on the specifications in the [config.ini](config/config.ini) file and requires a specific folder strucutre.
 
 1. Open the config/config.ini file and make the following adjustments:
 - projects: choose for which dataset to train the model
@@ -108,7 +108,7 @@ python main.py
 
 # Available Models used in the Study
 
-The following models are available and are in save/<project_name>/
+The following models are available and are in save/<project_name>/. Each model has an additional configuration file (.json) that is required when using it for image classification.
 
 ## Snapshot Serengeti
 
