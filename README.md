@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/146035349.svg)](https://zenodo.org/badge/latestdoi/146035349)
 # _Identifying Animal Species in Camera Trap Images using Deep Learning and Citizen Science_
 
 This repo provides the research code used in _Identifying Animal Species in Camera Trap Images using Deep Learning and Citizen Science_. We strongly recommend to use the following repo
