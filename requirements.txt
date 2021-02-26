@@ -1,4 +1,4 @@
-aiohttp==2.1.0
+aiohttp==3.7.4
 async-timeout==1.2.1
 asyncio==3.4.3
 bleach==1.5.0
